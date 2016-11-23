@@ -1,0 +1,10 @@
+% Facts
+nextday(1,2). nextday(2,3). nextroom(1,2).
+course(c1,1,1). course(c1,2,1).
+course(c2,1,2). course(c2,2,2). course(c2,3,2).
+sumrooms(1,1). sumrooms(2,1). sumrooms(3,1).
+sumdays(1,1). sumdays(2,2).
+
+% Solution:
+% {scheduled(1,1), scheduled(2,2), scheduled(3,2) }
+% {scheduled(1,2), scheduled(2,1), scheduled(3,2) }
