@@ -1,1 +1,1 @@
-scheduled(X,Y) v ~scheduled(X,Y):- course(_,X,Y).
+scheduled(X,Y) v ~scheduled(X,Y) :- course(_,X,Y).

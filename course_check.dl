@@ -1,0 +1,2 @@
+:- sumdays(Y,S), not #count{X : scheduled(X,Y)} = S.
+:- sumrooms(X,S), not #count{Y : scheduled(X,Y)} = S.
