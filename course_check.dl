@@ -1,2 +1,4 @@
+:- scheduled(X,Y), #count{V : nextday(X,V)} = 0, #count{U : nextday(U,X)} = 0.
+:- scheduled(X,Y), #count{V : nextroom(Y,V)} = 0, #count{U : nextroom(U,Y)} = 0.
 :- sumdays(Y,S), not #count{X : scheduled(X,Y)} = S.
 :- sumrooms(X,S), not #count{Y : scheduled(X,Y)} = S.

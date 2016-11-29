@@ -1,6 +1,6 @@
 % Facts
 nextday(1,2). nextday(2,3). nextroom(1,2). nextroom(2,3).
-course(c1,1,1). course(c1,2,1). course(c1,3,2). course(c1,3,3).
+course(c1,1,1). course(c1,2,1). course(c1,2,3). course(c1,3,3).
 course(c2,1,2). course(c2,2,2). course(c2,3,2).
 sumrooms(1,2). sumrooms(2,2). sumrooms(3,1).
 sumdays(1,2). sumdays(2,2). sumdays(3,1).
