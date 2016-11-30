@@ -1,0 +1,6 @@
+UNCOMPUTED_d4(M) :- expect_d4(M), not d4(M).
+UNCOMPUTED_d5(M) :- expect_d5(M), not d5(M).
+UNEXPECTED_d4(M) :- d4(M), not expect_d4(M).
+UNEXPECTED_d5(M) :- d5(M), not expect_d5(M).
+DUPLICATED_d4(X,Y) :- d4(X), d4(Y), X < Y.
+DUPLICATED_d5(X,Y) :- d5(X), d5(Y), X < Y.
