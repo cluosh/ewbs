@@ -1,0 +1,41 @@
+% Transitition rules for money flow
+
+% Credulous strawmen (OR), do a maximum calculation
+t(S,M) :- c(S), ok(S), s1(S,X), s2(S,Y), U = X + Y, #absdiff(X,Y,V), Z = U + V, M = Z / 2.
+t(S,M) :- c(S), wary(S), s1(S,X), s2(S,Y), M = X * Y.
+
+% Mistrustful strawmen (XOR)
+t(S,M) :- m(S), ok(S), s1(S,X), s2(S,Y), #absdiff(X,Y,M).
+t(S,M) :- m(S), wary(S), s1(S,X), s2(S,Y), M = X * Y.
+
+% Wary strawmen (AND)
+t(S,M) :- w(S), ok(S), s1(S,X), s2(S,Y), M = X * Y.
+
+% Build the network
+c(c1).
+w(w1). w(w2).
+m(m1). m(m2).
+
+% Node m1
+s1(m1,M) :- d1(M).
+s2(m1,M) :- d2(M).
+
+% Node w2
+s1(w2,M) :- d1(M).
+s2(w2,M) :- d2(M).
+
+% Node w1
+s1(w1,M) :- d3(M).
+s2(w1,M) :- t(m1,M).
+
+% Node m2
+s1(m2,M) :- d3(M).
+s2(m2,M) :- t(m1,M).
+
+% Node c1
+s1(c1,M) :- t(w1,M).
+s2(c1,M) :- t(w2,M).
+
+% Destination deposits
+d4(M) :- t(m2,M).
+d5(M) :- t(c1,M).

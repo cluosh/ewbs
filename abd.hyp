@@ -1,0 +1,2 @@
+ok(c1). ok(m1). ok(m2). ok(w1). ok(w2).
+wary(c1). wary(m1). wary(m2).
