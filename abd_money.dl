@@ -39,3 +39,8 @@ s2(c1,M) :- t(w2,M).
 % Destination deposits
 d4(M) :- t(m2,M).
 d5(M) :- t(c1,M).
+
+% Domain constraints
+:- s1(S,M1), s1(S,M2), M1 != M2.
+:- s2(S,M1), s2(S,M2), M1 != M2.
+:- t(S,M1), t(S,M2), M1 != M2.
